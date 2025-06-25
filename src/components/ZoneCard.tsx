@@ -26,6 +26,8 @@ interface ZoneCardProps {
 export default function ZoneCard({ zone }: ZoneCardProps) {
   const pathname = usePathname();
   const isFromViajes = pathname === '/viajes';
+  const isFromRestaurantes = pathname === '/restaurantes';
+  const isFromHospedajes = pathname === '/hospedajes';
   
   let images: string[] = [];
   if (Array.isArray(zone.images)) {
@@ -40,7 +42,24 @@ export default function ZoneCard({ zone }: ZoneCardProps) {
   const mainImage = images[0] || '/placeholder-image.jpg';
 
   // Determinar la ruta de detalles basada en la página actual
-  const detailRoute = isFromViajes ? `/viajes/${zone.id}` : `/zones/${zone.id}`;
+  let detailRoute = `/zones/${zone.id}`;
+  if (isFromViajes) detailRoute = `/viajes/${zone.id}`;
+  if (isFromRestaurantes) detailRoute = `/restaurantes/${zone.id}`;
+  if (isFromHospedajes) detailRoute = `/hospedajes/${zone.id}`;
+
+  // Determinar el badge a mostrar
+  let badgeText = '';
+  let badgeColor = 'from-blue-500 to-blue-600';
+  if (isFromViajes) {
+    badgeText = 'Viaje y Naturaleza';
+    badgeColor = 'from-green-500 to-green-600';
+  } else if (isFromRestaurantes) {
+    badgeText = 'Restaurante';
+    badgeColor = 'from-orange-500 to-orange-600';
+  } else if (isFromHospedajes) {
+    badgeText = 'Hospedaje';
+    badgeColor = 'from-purple-500 to-purple-600';
+  }
 
   return (
     <div className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100">
@@ -64,9 +83,9 @@ export default function ZoneCard({ zone }: ZoneCardProps) {
               {zone.category_name}
             </span>
           )}
-          {isFromViajes && (
-            <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm">
-              Viaje y Naturaleza
+          {badgeText && (
+            <span className={`bg-gradient-to-r ${badgeColor} text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg backdrop-blur-sm`}>
+              {badgeText}
             </span>
           )}
         </div>

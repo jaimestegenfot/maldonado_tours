@@ -8,7 +8,12 @@ const restaurantes = [
     description: 'Gastronomía local con insumos amazónicos.',
     location: 'Puerto Maldonado',
     images: JSON.stringify(['https://images.unsplash.com/photo-1504674900247-0877df9cc836']),
-    created_at: '2024-01-01T00:00:00Z'
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Platos con pescado de río y frutos amazónicos.' },
+      { title: 'Ambiente', text: 'Restaurante rústico con vista al río Madre de Dios.' },
+      { title: 'Recomendación', text: 'Prueba el juane de gallina y el tacacho con cecina.' }
+    ]
   },
   {
     id: 2,
@@ -16,7 +21,12 @@ const restaurantes = [
     description: 'Comida típica y ambiente amazónico.',
     location: 'Puerto Maldonado',
     images: JSON.stringify(['https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/a5/ec/bd/restaurante-la-selva.jpg?w=900&h=500&s=1']),
-    created_at: '2024-01-01T00:00:00Z'
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Ceviche amazónico y platos con yuca.' },
+      { title: 'Horarios', text: 'Abierto de 7:00 AM a 10:00 PM todos los días.' },
+      { title: 'Tips', text: 'Reserva con anticipación en temporada alta.' }
+    ]
   },
   {
     id: 3,
@@ -24,7 +34,11 @@ const restaurantes = [
     description: 'Pescados y mariscos amazónicos.',
     location: 'Puerto Maldonado',
     images: JSON.stringify(['https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/375487651.jpg?k=cece5be3462267b680d5ed842cd7782cb3bd5b2afb493488f921b8928999b2ad&o=']),
-    created_at: '2024-01-01T00:00:00Z'
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Pescado a la parrilla y sopas amazónicas.' },
+      { title: 'Ubicación', text: 'Ubicado frente al río con terraza al aire libre.' }
+    ]
   },
   {
     id: 4,
@@ -32,7 +46,12 @@ const restaurantes = [
     description: 'Especialidad en carnes y pescados amazónicos.',
     location: 'Puerto Maldonado',
     images: JSON.stringify(['https://images.unsplash.com/photo-1504674900247-0877df9cc836']),
-    created_at: '2024-01-01T00:00:00Z'
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Carnes de caza y pescados de río.' },
+      { title: 'Ambiente', text: 'Restaurante familiar con decoración amazónica.' },
+      { title: 'Recomendación', text: 'No te pierdas el chicharrón de pescado.' }
+    ]
   },
   {
     id: 5,
@@ -40,7 +59,12 @@ const restaurantes = [
     description: 'Platos típicos de la selva y ambiente familiar.',
     location: 'Puerto Maldonado',
     images: JSON.stringify(['https://images.unsplash.com/photo-1519864600265-abb23847ef2c']),
-    created_at: '2024-01-01T00:00:00Z'
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Patarashca de pescado y platos tradicionales.' },
+      { title: 'Historia', text: 'Restaurante familiar con más de 20 años de tradición.' },
+      { title: 'Tips', text: 'Ideal para grupos grandes y familias.' }
+    ]
   },
   {
     id: 6,
@@ -48,7 +72,12 @@ const restaurantes = [
     description: 'Comida regional y atención cálida.',
     location: 'Puerto Maldonado',
     images: JSON.stringify(['https://images.unsplash.com/photo-1519864600265-abb23847ef2c']),
-    created_at: '2024-01-01T00:00:00Z'
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Comida casera y platos regionales.' },
+      { title: 'Ambiente', text: 'Restaurante acogedor con atención personalizada.' },
+      { title: 'Recomendación', text: 'Prueba el arroz chaufa amazónico.' }
+    ]
   },
 ];
 
