@@ -17,19 +17,19 @@ const categorias = [
     nombre: 'Zonas Naturales',
     imagen: 'https://blog.redbus.pe/wp-content/uploads/2018/01/madure.jpg',
     descripcion: 'Selvas, ríos y paisajes únicos.',
-    href: '/zones?category=Naturaleza',
+    href: '/viajes',
   },
   {
     nombre: 'Restaurantes',
     imagen: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/a5/ec/bd/restaurante-la-selva.jpg?w=900&h=500&s=1',
     descripcion: 'Gastronomía amazónica y sabores locales.',
-    href: '/zones?category=Restaurante',
+    href: '/restaurantes',
   },
   {
     nombre: 'Hospedajes',
     imagen: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/2a/9c/ed/hotel-centenario.jpg?w=1000&h=600&s=1',
     descripcion: 'Lodges, hoteles y experiencias únicas.',
-    href: '/zones?category=Hospedaje',
+    href: '/hospedajes',
   },
 ];
 

@@ -52,7 +52,7 @@ const hospedajes = [
   },
 ];
 
-const HERO_IMG = hospedajes[0].images[0];
+const HERO_IMG = "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/ad/ad/12/caption.jpg?w=1400&h=800&s=1";
 
 export default function HospedajesPage() {
   return (
