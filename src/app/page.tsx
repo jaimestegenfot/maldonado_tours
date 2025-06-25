@@ -1,103 +1,118 @@
-import Image from "next/image";
+'use client';
+import Link from 'next/link';
+
+const amazoniaImages = [
+  '/amazonia1.jpg',
+  '/amazonia2.jpg',
+  '/amazonia3.jpg',
+  '/amazonia4.jpg',
+];
+
+const categorias = [
+  {
+    nombre: 'Zonas Naturales',
+    imagen: '/amazonia-zona.jpg',
+    descripcion: 'Selvas, ríos y paisajes únicos.',
+    href: '/zones?category=Naturaleza',
+  },
+  {
+    nombre: 'Restaurantes',
+    imagen: '/amazonia-restaurante.jpg',
+    descripcion: 'Gastronomía amazónica y sabores locales.',
+    href: '/zones?category=Restaurante',
+  },
+  {
+    nombre: 'Hospedajes',
+    imagen: '/amazonia-hospedaje.jpg',
+    descripcion: 'Lodges, hoteles y experiencias únicas.',
+    href: '/zones?category=Hospedaje',
+  },
+  {
+    nombre: 'Fichos y Paradores',
+    imagen: '/amazonia-ficho.jpg',
+    descripcion: 'Servicios y paradores en la selva.',
+    href: '/zones?category=Ficho',
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className="space-y-24">
+      {/* HERO */}
+      <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden rounded-3xl shadow-lg">
+        <img
+          src="/amazonia1.jpg"
+          alt="Amazonía"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-green-900/60 to-green-700/40 z-10" />
+        <div className="relative z-20 text-center text-white px-4 max-w-2xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">
+            Explora la <span className="text-green-300">Amazonía</span> y sus maravillas
+          </h1>
+          <p className="text-lg md:text-2xl mb-8 text-green-100 drop-shadow">
+            Descubre destinos, cultura, naturaleza y experiencias únicas en el pulmón del mundo.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/zones"
+              className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold text-lg shadow-lg transition-colors"
+            >
+              Explorar Destinos
+            </Link>
+            <Link
+              href="/auth/register"
+              className="bg-white/80 text-green-900 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-green-100 shadow-lg transition-colors"
+            >
+              Soy Operador Turístico
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </section>
+
+      {/* GALERÍA */}
+      <section className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-green-900">Imágenes de la Amazonía</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {amazoniaImages.map((img, i) => (
+            <div key={i} className="rounded-xl overflow-hidden shadow-lg group relative">
+              <img src={img} alt="Amazonía" className="object-cover w-full h-40 md:h-56 group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CATEGORÍAS DESTACADAS */}
+      <section className="max-w-6xl mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-green-900">Categorías Destacadas</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {categorias.map((cat, i) => (
+            <Link href={cat.href} key={i} className="block rounded-2xl overflow-hidden shadow-lg group relative">
+              <img src={cat.imagen} alt={cat.nombre} className="object-cover w-full h-56 group-hover:scale-105 transition-transform duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 via-transparent to-transparent z-10" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                <h3 className="text-2xl font-bold text-white mb-2 drop-shadow">{cat.nombre}</h3>
+                <p className="text-green-100 text-lg drop-shadow">{cat.descripcion}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA OPERADORES */}
+      <section className="bg-gradient-to-br from-green-700 via-green-600 to-green-400 rounded-2xl p-12 text-center shadow-xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white drop-shadow">¿Eres operador turístico?</h2>
+        <p className="text-lg md:text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+          Únete a la plataforma y comparte tus destinos, experiencias y servicios con viajeros de todo el mundo. ¡Haz crecer tu negocio en la Amazonía!
+        </p>
+        <Link
+          href="/auth/register"
+          className="bg-white text-green-700 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-green-100 shadow-lg transition-colors"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          Registrarse Gratis
+        </Link>
+      </section>
     </div>
   );
 }
