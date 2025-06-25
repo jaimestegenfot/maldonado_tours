@@ -1,10 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState('');
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear().toString());
+  }, []);
 
   const quickLinks = [
     { href: '/viajes', label: 'Viajes/Naturaleza' },

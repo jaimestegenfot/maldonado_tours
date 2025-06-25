@@ -198,24 +198,24 @@ export default function RestauranteDetailPage() {
             />
             
             {/* Overlay con información */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <div className="flex items-center space-x-4 mb-2">
-                  <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                  <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
                     Restaurante
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-2">{restaurante.name}</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-2 text-white drop-shadow-lg">{restaurante.name}</h1>
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-1">
-                    <FaMapMarkerAlt className="w-5 h-5 text-green-400" />
-                    <span className="font-medium">{restaurante.location}</span>
+                    <FaMapMarkerAlt className="w-5 h-5 text-yellow-300" />
+                    <span className="font-semibold text-white drop-shadow">{restaurante.location}</span>
                   </div>
                   <div className="flex items-center space-x-1">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <FaStar key={star} className="w-5 h-5 text-yellow-400 fill-current" />
+                      <FaStar key={star} className="w-5 h-5 text-yellow-300 fill-current" />
                     ))}
-                    <span className="ml-2 font-medium">4.7</span>
+                    <span className="ml-2 font-semibold text-white drop-shadow">4.7</span>
                   </div>
                 </div>
               </div>
@@ -277,9 +277,9 @@ export default function RestauranteDetailPage() {
                 <div className="space-y-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-4">Información Adicional</h3>
                   {restaurante.descriptions.map((desc, idx) => (
-                    <div key={idx} className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500">
-                      <h4 className="text-lg font-bold text-orange-700 mb-2">{desc.title}</h4>
-                      <p className="text-gray-700 leading-relaxed">{desc.text}</p>
+                    <div key={idx} className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500 shadow-sm">
+                      <h4 className="text-lg font-bold text-orange-800 mb-2">{desc.title}</h4>
+                      <p className="text-gray-800 leading-relaxed font-medium">{desc.text}</p>
                     </div>
                   ))}
                 </div>
@@ -290,32 +290,32 @@ export default function RestauranteDetailPage() {
             <div className="bg-white rounded-2xl shadow-lg p-8">
               <h2 className="text-2xl font-bold text-gray-800 mb-6">Información del Restaurante</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-center space-x-3 p-4 bg-orange-50 rounded-lg">
-                  <FaMapMarkerAlt className="w-5 h-5 text-orange-500" />
+                <div className="flex items-center space-x-3 p-4 bg-orange-50 rounded-lg shadow-sm">
+                  <FaMapMarkerAlt className="w-5 h-5 text-orange-600" />
                   <div>
-                    <p className="text-gray-600 text-sm">Ubicación</p>
-                    <p className="font-semibold">{restaurante.location}</p>
+                    <p className="text-gray-700 text-sm font-medium">Ubicación</p>
+                    <p className="font-bold text-gray-900">{restaurante.location}</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg">
-                  <FaClock className="w-5 h-5 text-green-500" />
+                <div className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg shadow-sm">
+                  <FaClock className="w-5 h-5 text-green-600" />
                   <div>
-                    <p className="text-gray-600 text-sm">Horarios</p>
-                    <p className="font-semibold">7:00 AM - 10:00 PM</p>
+                    <p className="text-gray-700 text-sm font-medium">Horarios</p>
+                    <p className="font-bold text-gray-900">7:00 AM - 10:00 PM</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3 p-4 bg-blue-50 rounded-lg">
-                  <FaPhone className="w-5 h-5 text-blue-500" />
+                <div className="flex items-center space-x-3 p-4 bg-blue-50 rounded-lg shadow-sm">
+                  <FaPhone className="w-5 h-5 text-blue-600" />
                   <div>
-                    <p className="text-gray-600 text-sm">Teléfono</p>
-                    <p className="font-semibold">+51 982 123 456</p>
+                    <p className="text-gray-700 text-sm font-medium">Teléfono</p>
+                    <p className="font-bold text-gray-900">+51 982 123 456</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg">
-                  <FaUsers className="w-5 h-5 text-purple-500" />
+                <div className="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg shadow-sm">
+                  <FaUsers className="w-5 h-5 text-purple-600" />
                   <div>
-                    <p className="text-gray-600 text-sm">Capacidad</p>
-                    <p className="font-semibold">50 personas</p>
+                    <p className="text-gray-700 text-sm font-medium">Capacidad</p>
+                    <p className="font-bold text-gray-900">50 personas</p>
                   </div>
                 </div>
               </div>
@@ -329,31 +329,31 @@ export default function RestauranteDetailPage() {
               <h3 className="text-xl font-bold text-gray-800 mb-4">Información Rápida</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <FaClock className="w-5 h-5 text-orange-500" />
+                  <FaClock className="w-5 h-5 text-orange-600" />
                   <div>
-                    <p className="text-gray-600 text-sm">Horarios</p>
-                    <p className="font-semibold">7:00 AM - 10:00 PM</p>
+                    <p className="text-gray-700 text-sm font-medium">Horarios</p>
+                    <p className="font-bold text-gray-900">7:00 AM - 10:00 PM</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FaUsers className="w-5 h-5 text-green-500" />
+                  <FaUsers className="w-5 h-5 text-green-600" />
                   <div>
-                    <p className="text-gray-600 text-sm">Capacidad</p>
-                    <p className="font-semibold">50 personas</p>
+                    <p className="text-gray-700 text-sm font-medium">Capacidad</p>
+                    <p className="font-bold text-gray-900">50 personas</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FaUtensils className="w-5 h-5 text-purple-500" />
+                  <FaUtensils className="w-5 h-5 text-purple-600" />
                   <div>
-                    <p className="text-gray-600 text-sm">Tipo de Cocina</p>
-                    <p className="font-semibold">Amazónica</p>
+                    <p className="text-gray-700 text-sm font-medium">Tipo de Cocina</p>
+                    <p className="font-bold text-gray-900">Amazónica</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FaStar className="w-5 h-5 text-yellow-500" />
+                  <FaStar className="w-5 h-5 text-yellow-600" />
                   <div>
-                    <p className="text-gray-600 text-sm">Calificación</p>
-                    <p className="font-semibold text-yellow-600">4.7/5</p>
+                    <p className="text-gray-700 text-sm font-medium">Calificación</p>
+                    <p className="font-bold text-yellow-700">4.7/5</p>
                   </div>
                 </div>
               </div>
@@ -370,8 +370,8 @@ export default function RestauranteDetailPage() {
 
             {/* Información de contacto */}
             <div className="bg-blue-50 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-blue-800 mb-2">Información de Contacto</h3>
-              <div className="space-y-3 text-blue-700 text-sm">
+              <h3 className="text-lg font-bold text-blue-900 mb-2">Información de Contacto</h3>
+              <div className="space-y-3 text-blue-800 text-sm font-medium">
                 <div className="flex items-center space-x-2">
                   <FaPhone className="w-4 h-4" />
                   <span>+51 982 123 456</span>

@@ -8,12 +8,10 @@ const navLinks = [
   { href: '/viajes', label: 'Viajes/Naturaleza' },
   { href: '/restaurantes', label: 'Restaurantes' },
   { href: '/hospedajes', label: 'Hospedajes' },
-  { href: '/fichos', label: 'Fichos/Paradores' },
-  { href: '/zones', label: 'Todos los Destinos' },
 ];
 
 export default function Navbar() {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLinkClick = () => {
@@ -36,7 +34,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-8 mr-10">
             <Link href="/" className="text-gray-700 hover:text-green-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-green-50">
               Inicio
             </Link>
@@ -45,7 +43,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            {user ? (
+            {!loading && user ? (
               <Link
                 href={panelHref}
                 className="bg-green-50 text-green-800 font-bold px-4 py-2 rounded-lg shadow hover:bg-green-100 border border-green-200 transition-colors"
@@ -53,7 +51,7 @@ export default function Navbar() {
               >
                 Panel
               </Link>
-            ) : (
+            ) : !loading && (
               <Link
                 href="/auth/login"
                 className="text-gray-700 hover:text-green-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-green-50"
@@ -88,7 +86,7 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              {user ? (
+              {!loading && user ? (
                 <Link
                   href={panelHref}
                   className="bg-green-50 text-green-800 font-bold px-4 py-2 rounded-lg shadow hover:bg-green-100 border border-green-200 transition-colors"
@@ -97,7 +95,7 @@ export default function Navbar() {
                 >
                   Panel
                 </Link>
-              ) : (
+              ) : !loading && (
                 <Link
                   href="/auth/login"
                   className="text-gray-700 hover:text-green-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-green-50"
