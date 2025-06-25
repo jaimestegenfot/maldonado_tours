@@ -17,24 +17,25 @@ const links = [
   ) },
 ];
 
-export default function AdminSidebar({ onLogout }: { onLogout: () => void }) {
+export default function AdminSidebar({ onLogout, mobileClose }: { onLogout: () => void, mobileClose?: () => void }) {
   const pathname = usePathname();
   return (
-    <aside className="w-full md:w-64 bg-white rounded-lg shadow p-6 mb-8 md:mb-0 md:mr-8">
-      <nav className="flex flex-col space-y-4">
+    <aside className="w-full md:w-64 bg-white rounded-lg shadow p-4 md:p-6 mb-4 md:mb-0 md:mr-8 flex-shrink-0">
+      <nav className="flex flex-col space-y-2">
         {links.map(link => (
           <Link
             key={link.href}
             href={link.href}
-            className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${pathname === link.href ? 'bg-green-100 text-green-900 font-bold' : 'text-gray-700 hover:bg-green-50'}`}
+            className={`flex items-center px-4 py-2 rounded-lg font-medium transition-colors whitespace-nowrap ${pathname === link.href ? 'bg-green-100 text-green-900 font-bold' : 'text-gray-700 hover:bg-green-50'}`}
+            onClick={mobileClose}
           >
             {link.icon}
             {link.label}
           </Link>
         ))}
         <button
-          onClick={onLogout}
-          className="flex items-center px-4 py-2 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors mt-8"
+          onClick={() => { onLogout(); if (mobileClose) mobileClose(); }}
+          className="flex items-center px-4 py-2 rounded-lg font-medium text-red-600 hover:bg-red-50 transition-colors mt-4 md:mt-8 whitespace-nowrap"
         >
           <svg className="w-5 h-5 mr-2 text-red-500" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
           Cerrar Sesión

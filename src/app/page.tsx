@@ -2,10 +2,14 @@
 import Link from 'next/link';
 
 const amazoniaImages = [
-  '/amazonia1.jpg',
-  '/amazonia2.jpg',
-  '/amazonia3.jpg',
-  '/amazonia4.jpg',
+  'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
+  'https://images.unsplash.com/photo-1464983953574-0892a716854b',
+  'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429',
+  'https://images.unsplash.com/photo-1465101178521-c1a9136a3fd8',
+  'https://images.unsplash.com/photo-1465101046530-73398c7f28ca',
+  'https://images.unsplash.com/photo-1519864600265-abb23847ef2c',
+  'https://images.unsplash.com/photo-1504674900247-0877df9cc836',
+  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308',
 ];
 
 const categorias = [

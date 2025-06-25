@@ -21,7 +21,16 @@ interface ZoneCardProps {
 }
 
 export default function ZoneCard({ zone }: ZoneCardProps) {
-  const images = zone.images ? JSON.parse(zone.images) : [];
+  let images: string[] = [];
+  if (Array.isArray(zone.images)) {
+    images = zone.images;
+  } else if (typeof zone.images === 'string') {
+    try {
+      images = JSON.parse(zone.images);
+    } catch {
+      images = [];
+    }
+  }
   const mainImage = images[0] || '/placeholder-image.jpg';
 
   return (
@@ -31,6 +40,7 @@ export default function ZoneCard({ zone }: ZoneCardProps) {
           src={mainImage}
           alt={zone.name}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className="object-cover"
         />
         {zone.category_name && (
