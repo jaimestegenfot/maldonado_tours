@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import ZoneCard from '@/components/ZoneCard';
+import ZoneCard from '../../components/ZoneCard';
 
 export default function ZonesPage() {
   const [zones, setZones] = useState([]);

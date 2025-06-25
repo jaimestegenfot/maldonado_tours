@@ -1,5 +1,5 @@
 "use client";
-import ZoneCard from '@/components/ZoneCard';
+import ZoneCard from '../../components/ZoneCard';
 
 const restaurantes = [
   {
