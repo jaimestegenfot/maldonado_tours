@@ -2,40 +2,34 @@
 import Link from 'next/link';
 
 const amazoniaImages = [
-  'https://images.unsplash.com/photo-1506744038136-46273834b3fb',
-  'https://images.unsplash.com/photo-1464983953574-0892a716854b',
-  'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429',
-  'https://images.unsplash.com/photo-1465101178521-c1a9136a3fd8',
-  'https://images.unsplash.com/photo-1465101046530-73398c7f28ca',
-  'https://images.unsplash.com/photo-1519864600265-abb23847ef2c',
-  'https://images.unsplash.com/photo-1504674900247-0877df9cc836',
-  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308',
+  'https://picchutravel.com/wp-content/uploads/lugares-para-visitar-en-madre-de-dios.jpg',
+  'https://assets.howlanders.com/es/tours-peru/puerto-maldonado/tour-puerto-maldonado/timeline/rio-madre-de-dios.jpg',
+  'https://andinoperu.b-cdn.net/wp-content/uploads/2023/06/lago-sandoval-1.jpg',
+  'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/48/ca/7b/20190708-155418-largejpg.jpg?w=800&h=400&s=1',
+  'https://www.ollantaytambo.org/img/tambopata-explorer-043-01.jpg',
+  'https://portal.andina.pe/EDPFotografia3/thumbnail/2023/09/06/000991871M.jpg',
+  'https://live.staticflickr.com/65535/51739284311_13f0e356af_b.jpg',
+  'https://www.admin.caminossur.com/vistas/img/products/covers/rio-amazonas-isla-de-los-monos.jpg',
 ];
 
 const categorias = [
   {
     nombre: 'Zonas Naturales',
-    imagen: '/amazonia-zona.jpg',
+    imagen: 'https://blog.redbus.pe/wp-content/uploads/2018/01/madure.jpg',
     descripcion: 'Selvas, ríos y paisajes únicos.',
     href: '/zones?category=Naturaleza',
   },
   {
     nombre: 'Restaurantes',
-    imagen: '/amazonia-restaurante.jpg',
+    imagen: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/a5/ec/bd/restaurante-la-selva.jpg?w=900&h=500&s=1',
     descripcion: 'Gastronomía amazónica y sabores locales.',
     href: '/zones?category=Restaurante',
   },
   {
     nombre: 'Hospedajes',
-    imagen: '/amazonia-hospedaje.jpg',
+    imagen: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/2a/9c/ed/hotel-centenario.jpg?w=1000&h=600&s=1',
     descripcion: 'Lodges, hoteles y experiencias únicas.',
     href: '/zones?category=Hospedaje',
-  },
-  {
-    nombre: 'Fichos y Paradores',
-    imagen: '/amazonia-ficho.jpg',
-    descripcion: 'Servicios y paradores en la selva.',
-    href: '/zones?category=Ficho',
   },
 ];
 
@@ -45,7 +39,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative h-[60vh] md:h-[80vh] flex items-center justify-center overflow-hidden rounded-3xl shadow-lg">
         <img
-          src="/amazonia1.jpg"
+          src="https://content.emarket.pe/common/collections/standard/0b/d4/0bd4935a-e79c-425f-927c-606d7ce53eb4.jpg"
           alt="Amazonía"
           className="absolute inset-0 w-full h-full object-cover object-center z-0"
         />
