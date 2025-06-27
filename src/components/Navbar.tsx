@@ -53,7 +53,7 @@ export default function Navbar() {
               </Link>
             ) : !loading && (
               <Link
-                href="/auth/login"
+                href="/dashboard"
                 className="text-gray-700 hover:text-green-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-green-50"
               >
                 Iniciar Sesión
@@ -97,7 +97,7 @@ export default function Navbar() {
                 </Link>
               ) : !loading && (
                 <Link
-                  href="/auth/login"
+                  href="/dashboard"
                   className="text-gray-700 hover:text-green-600 font-medium transition-colors px-2 py-1 rounded-lg hover:bg-green-50"
                   onClick={handleLinkClick}
                 >

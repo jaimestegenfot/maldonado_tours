@@ -1,0 +1,222 @@
+// Datos ficticios para el dashboard
+
+export const mockCategories = [
+  { id: 1, name: 'Zonas' },
+  { id: 2, name: 'Viajes' },
+  { id: 3, name: 'Restaurantes' },
+  { id: 4, name: 'Hospedajes' }
+];
+
+export const mockZones = [
+  {
+    id: 1,
+    name: 'Reserva Nacional Tambopata',
+    description: 'Una de las reservas más biodiversas del mundo, hogar de miles de especies de flora y fauna amazónica.',
+    category_id: 1,
+    category_name: 'Zonas',
+    location: 'Puerto Maldonado, Madre de Dios',
+    price: 'Desde $50 USD',
+    duration: '1 día',
+    status: 'active',
+    views: 1250,
+    favorites: 89,
+    rating: 4.8,
+    images: ['https://www.lorenzoexpeditions.com/wp-content/uploads/2022/12/RESERVA-TAMBOPATA-1-2-scaled.jpg'],
+    services: ['Guía especializado', 'Transporte', 'Almuerzo', 'Equipos de observación'],
+    highlights: ['Observación de aves', 'Caminata por la selva', 'Visita al lago'],
+    requirements: 'Ropa cómoda, repelente, agua',
+    included: 'Transporte, guía, almuerzo, equipos',
+    not_included: 'Bebidas adicionales, propinas',
+    additional_info: 'Recomendamos llevar cámara fotográfica',
+    contact_phone: '+51 999 123 456',
+    contact_email: 'info@tambopata.com',
+    website: 'https://tambopata.com',
+    created_at: '2024-01-15'
+  },
+  {
+    id: 2,
+    name: 'Lago Sandoval',
+    description: 'Hermoso lago rodeado de selva virgen, perfecto para observar fauna silvestre y disfrutar de la naturaleza.',
+    category_id: 1,
+    category_name: 'Zonas',
+    location: 'Puerto Maldonado, Madre de Dios',
+    price: 'Desde $35 USD',
+    duration: 'Medio día',
+    status: 'active',
+    views: 890,
+    favorites: 67,
+    rating: 4.6,
+    images: ['https://www.peru.travel/Contenido/Uploads/lago-sandoval-interior-3_637661807837691460.jpg'],
+    services: ['Paseo en bote', 'Guía local', 'Refrigerio'],
+    highlights: ['Observación de caimanes', 'Paseo en bote', 'Fotografía'],
+    requirements: 'Ropa ligera, protector solar',
+    included: 'Bote, guía, refrigerio',
+    not_included: 'Transporte desde hotel',
+    additional_info: 'Mejor horario: tarde para ver caimanes',
+    contact_phone: '+51 999 234 567',
+    contact_email: 'info@sandoval.com',
+    website: 'https://sandoval.com',
+    created_at: '2024-01-20'
+  },
+  {
+    id: 3,
+    name: 'El Caimán Lodge',
+    description: 'Lodge ecológico en medio de la selva, ofreciendo experiencias únicas de ecoturismo.',
+    category_id: 4,
+    category_name: 'Hospedajes',
+    location: 'Río Madre de Dios',
+    price: 'Desde $80 USD/noche',
+    duration: '2 días / 1 noche',
+    status: 'pending',
+    views: 456,
+    favorites: 34,
+    rating: 4.9,
+    images: ['/api/placeholder/400/300'],
+    services: ['Habitación privada', 'Alimentación completa', 'Actividades guiadas'],
+    highlights: ['Cabañas en la selva', 'Comida local', 'Actividades nocturnas'],
+    requirements: 'Reserva previa, documentos de identidad',
+    included: 'Habitación, 3 comidas, actividades',
+    not_included: 'Bebidas alcohólicas, propinas',
+    additional_info: 'WiFi disponible en áreas comunes',
+    contact_phone: '+51 999 345 678',
+    contact_email: 'reservas@caimanlodge.com',
+    website: 'https://caimanlodge.com',
+    created_at: '2024-02-01'
+  },
+  {
+    id: 4,
+    name: 'Restaurante La Selva',
+    description: 'Restaurante especializado en gastronomía amazónica con ingredientes frescos de la región.',
+    category_id: 3,
+    category_name: 'Restaurantes',
+    location: 'Centro de Puerto Maldonado',
+    price: 'Desde $15 USD',
+    duration: '1-2 horas',
+    status: 'active',
+    views: 678,
+    favorites: 45,
+    rating: 4.7,
+    images: ['/api/placeholder/400/300'],
+    services: ['Comida local', 'Bebidas regionales', 'Atención personalizada'],
+    highlights: ['Pescado de río', 'Frutas exóticas', 'Ambiente selvático'],
+    requirements: 'Reserva recomendada en temporada alta',
+    included: 'Plato principal, bebida',
+    not_included: 'Postres, bebidas adicionales',
+    additional_info: 'Abierto de 12:00 a 22:00',
+    contact_phone: '+51 999 456 789',
+    contact_email: 'info@laselva.com',
+    website: 'https://laselva.com',
+    created_at: '2024-01-10'
+  },
+  {
+    id: 5,
+    name: 'Aventura Amazónica',
+    description: 'Tour completo de aventura por la selva amazónica con actividades emocionantes.',
+    category_id: 2,
+    category_name: 'Viajes',
+    location: 'Madre de Dios',
+    price: 'Desde $120 USD',
+    duration: '3 días / 2 noches',
+    status: 'draft',
+    views: 234,
+    favorites: 12,
+    rating: 0,
+    images: ['/api/placeholder/400/300'],
+    services: ['Transporte completo', 'Alojamiento', 'Alimentación', 'Guía especializado'],
+    highlights: ['Canopy', 'Rafting', 'Caminatas nocturnas'],
+    requirements: 'Condición física buena, ropa deportiva',
+    included: 'Todo incluido excepto bebidas alcohólicas',
+    not_included: 'Bebidas alcohólicas, propinas',
+    additional_info: 'Grupo mínimo 4 personas',
+    contact_phone: '+51 999 567 890',
+    contact_email: 'info@aventuraamazonica.com',
+    website: 'https://aventuraamazonica.com',
+    created_at: '2024-02-05'
+  }
+];
+
+export const mockNotifications = [
+  {
+    id: 1,
+    type: 'view',
+    title: 'Nuevas vistas en "Reserva Nacional Tambopata"',
+    message: 'Tu destino ha recibido 25 nuevas vistas en las últimas 24 horas',
+    time: 'Hace 2 horas',
+    read: false,
+    icon: 'FaEye',
+    color: 'green'
+  },
+  {
+    id: 2,
+    type: 'favorite',
+    title: 'Nuevo favorito agregado',
+    message: 'Alguien agregó "Lago Sandoval" a sus favoritos',
+    time: 'Hace 4 horas',
+    read: false,
+    icon: 'FaHeart',
+    color: 'red'
+  },
+  {
+    id: 3,
+    type: 'rating',
+    title: 'Nueva calificación recibida',
+    message: 'Tu destino "El Caimán" recibió una calificación de 5 estrellas',
+    time: 'Hace 6 horas',
+    read: true,
+    icon: 'FaStar',
+    color: 'yellow'
+  },
+  {
+    id: 4,
+    type: 'system',
+    title: 'Actualización del sistema',
+    message: 'Hemos actualizado nuestras políticas de publicación. Revisa los cambios.',
+    time: 'Hace 1 día',
+    read: true,
+    icon: 'FaBell',
+    color: 'blue'
+  },
+  {
+    id: 5,
+    type: 'approval',
+    title: 'Destino aprobado',
+    message: 'Tu destino "Isla de los Monos" ha sido aprobado y está ahora visible públicamente',
+    time: 'Hace 2 días',
+    read: true,
+    icon: 'FaCheck',
+    color: 'green'
+  }
+];
+
+export const mockStats = {
+  totalViews: 3456,
+  totalFavorites: 234,
+  totalDestinations: 5,
+  monthlyGrowth: 12.5,
+  topDestination: 'Reserva Nacional Tambopata',
+  recentActivity: [
+    { date: '2024-02-15', views: 45, favorites: 3 },
+    { date: '2024-02-14', views: 38, favorites: 2 },
+    { date: '2024-02-13', views: 52, favorites: 5 },
+    { date: '2024-02-12', views: 41, favorites: 1 },
+    { date: '2024-02-11', views: 47, favorites: 4 },
+    { date: '2024-02-10', views: 39, favorites: 2 },
+    { date: '2024-02-09', views: 44, favorites: 3 }
+  ]
+};
+
+export const mockUser = {
+  id: 1,
+  name: 'Carlos Maldonado',
+  email: 'carlos@maldonadotours.com',
+  phone: '+51 999 123 456',
+  company: 'Maldonado Tours',
+  website: 'https://maldonadotours.com',
+  location: 'Puerto Maldonado, Madre de Dios',
+  bio: 'Operador turístico especializado en ecoturismo y aventura en la Amazonía peruana.',
+  avatar: '/api/placeholder/150/150',
+  joinDate: '2023-06-15',
+  totalDestinations: 5,
+  totalViews: 3456,
+  totalFavorites: 234
+}; 
