@@ -38,10 +38,10 @@ export default function Footer() {
               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-lg">
                 <span className="text-green-800 font-bold text-xl">MT</span>
               </div>
-              <span className="text-2xl font-extrabold text-white tracking-tight">Maldonado Tours</span>
+              <span className="text-2xl font-extrabold text-white tracking-tight">PEM Tours</span>
             </div>
             <p className="text-green-100 mb-6 leading-relaxed">
-              Descubre los destinos más hermosos de Puerto Maldonado. Te conectamos con la naturaleza, 
+              Descubre los destinos más hermosos de Madre de Dios. Te conectamos con la naturaleza, 
               la gastronomía local y los mejores lugares para hospedarte.
             </p>
             <div className="flex space-x-4">
@@ -90,14 +90,14 @@ export default function Footer() {
                 <FaEnvelope className="w-5 h-5 text-green-300 flex-shrink-0" />
                 <div>
                   <p className="text-green-100 font-medium">Email</p>
-                  <p className="text-green-200">info@maldonadotours.com</p>
+                  <p className="text-green-200">info@pemtours.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="w-5 h-5 text-green-300 flex-shrink-0 mt-1" />
                 <div>
                   <p className="text-green-100 font-medium">Dirección</p>
-                  <p className="text-green-200">Puerto Maldonado, Perú</p>
+                  <p className="text-green-200">Madre de Dios, Perú</p>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-6 text-white">Newsletter</h3>
             <p className="text-green-100 mb-4">
-              Suscríbete para recibir las mejores ofertas y novedades de Maldonado.
+              Suscríbete para recibir las mejores ofertas y novedades de PEM Tours.
             </p>
             <form className="space-y-3">
               <input
@@ -131,7 +131,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-green-200 text-sm">
-              © {currentYear} Maldonado Tours. Todos los derechos reservados.
+              © {currentYear} PEM Tours. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy" className="text-green-200 hover:text-white transition-colors">

@@ -72,7 +72,7 @@ export default function DashboardSidebar() {
       {/* Información adicional */}
       <div className="mt-6 p-4 bg-gray-50 rounded-xl">
         <p className="text-xs text-gray-600 text-center">
-          Maldonado Tours v1.0
+          PEM Tours v1.0
         </p>
       </div>
     </aside>

@@ -1,79 +1,6 @@
 "use client";
 import ZoneCard from '../../components/ZoneCard';
-
-const destinosNaturaleza = [
-  {
-    id: 1,
-    name: 'Reserva Nacional Tambopata',
-    description: 'Selva virgen, biodiversidad y paisajes únicos.',
-    location: 'Tambopata',
-    images: JSON.stringify(['https://www.lorenzoexpeditions.com/wp-content/uploads/2022/12/RESERVA-TAMBOPATA-1-2-scaled.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Historia', text: 'La Reserva Nacional Tambopata es uno de los lugares más biodiversos del planeta.' },
-      { title: 'Tips', text: 'Lleva binoculares y protector solar.' },
-      { title: 'Recomendación', text: 'No te pierdas el avistamiento de aves al amanecer.' }
-    ]
-  },
-  {
-    id: 2,
-    name: 'Lago Sandoval',
-    description: 'Hermoso lago rodeado de selva y fauna.',
-    location: 'Tambopata',
-    images: JSON.stringify(['https://www.peru.travel/Contenido/Uploads/lago-sandoval-interior-3_637661807837691460.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Historia', text: 'El Lago Sandoval es famoso por su belleza y su fauna única.' },
-      { title: 'Tips', text: 'Ideal para paseos en canoa y fotografía.' }
-    ]
-  },
-  {
-    id: 3,
-    name: 'Collpa de Guacamayos',
-    description: 'Espectáculo de aves en la Amazonía.',
-    location: 'Tambopata',
-    images: JSON.stringify(['https://rainforestexpeditions.com/es/wp-content/uploads/2021/10/Collpa-de-Guacamayos-Chuncho-en-la-Reserva-Nacional-Tambopata.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Recomendación', text: 'Llega temprano para ver la mayor cantidad de aves.' }
-    ]
-  },
-  {
-    id: 4,
-    name: 'Isla de los Monos',
-    description: 'Santuario de fauna amazónica en el río Madre de Dios.',
-    location: 'Río Madre de Dios',
-    images: JSON.stringify(['https://www.heliconialodge.com.pe/objetos/servicio/MTQ=/img_10122018102302.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Tips', text: 'Lleva frutas para interactuar con los monos.' }
-    ]
-  },
-  {
-    id: 5,
-    name: 'Centro de Rescate Taricaya',
-    description: 'Rescate y conservación de fauna silvestre.',
-    location: 'Río Madre de Dios',
-    images: JSON.stringify(['https://gotambopata.com/wp-content/uploads/slider/cache/8e8ce3c9e013b7034bc4ce3abae16be1/Atardecer-en-la-Reserva-Ecologica-Taricaya.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Historia', text: 'Centro dedicado a la rehabilitación de animales silvestres.' }
-    ]
-  },
-  {
-    id: 7,
-    name: 'Parque Nacional Bahuaja Sonene',
-    description: 'Área protegida con paisajes únicos y biodiversidad.',
-    location: 'Bahuaja Sonene',
-    images: JSON.stringify(['https://lugarturistico.pe/wp-content/uploads/2023/05/parque_nacional_bahuaja.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Tips', text: 'Ideal para los amantes de la naturaleza y la aventura.' }
-    ]
-  },
-];
-
-const HERO_IMG = "https://lugarturistico.pe/wp-content/uploads/2023/05/parque_nacional_bahuaja.jpg";
+import { mockViajes, heroImages } from '../../lib/mockData';
 
 export default function ViajesPage() {
   return (
@@ -81,7 +8,7 @@ export default function ViajesPage() {
       {/* HERO */}
       <section className="relative h-[40vh] md:h-[60vh] flex items-center justify-center overflow-hidden rounded-3xl shadow-lg mb-8">
         <img
-          src={HERO_IMG}
+          src={heroImages.viajes}
           alt="Viajes y Naturaleza"
           className="absolute inset-0 w-full h-full object-cover object-center z-0"
         />
@@ -100,7 +27,7 @@ export default function ViajesPage() {
       <section className="max-w-6xl mx-auto px-4">
         <h2 className="text-2xl font-bold mb-8 text-green-900">Destinos Naturales</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {destinosNaturaleza.map((zone, i) => (
+          {mockViajes.map((zone, i) => (
             <ZoneCard key={i} zone={zone} />
           ))}
         </div>

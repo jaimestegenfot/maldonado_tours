@@ -5,87 +5,7 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaMapMarkerAlt, FaStar, FaArrowLeft, FaShare, FaHeart, FaClock, FaPhone, FaEnvelope, FaUtensils, FaUsers } from 'react-icons/fa';
-
-// Array local de restaurantes (copiado de la página principal)
-const restaurantes = [
-  {
-    id: 1,
-    name: 'Restaurante Amazónico El Jaguar',
-    description: 'Gastronomía local con insumos amazónicos.',
-    location: 'Puerto Maldonado',
-    images: JSON.stringify(['https://images.unsplash.com/photo-1504674900247-0877df9cc836']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Especialidad', text: 'Platos con pescado de río y frutos amazónicos.' },
-      { title: 'Ambiente', text: 'Restaurante rústico con vista al río Madre de Dios.' },
-      { title: 'Recomendación', text: 'Prueba el juane de gallina y el tacacho con cecina.' }
-    ]
-  },
-  {
-    id: 2,
-    name: 'Restaurante La Selva',
-    description: 'Comida típica y ambiente amazónico.',
-    location: 'Puerto Maldonado',
-    images: JSON.stringify(['https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/a5/ec/bd/restaurante-la-selva.jpg?w=900&h=500&s=1']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Especialidad', text: 'Ceviche amazónico y platos con yuca.' },
-      { title: 'Horarios', text: 'Abierto de 7:00 AM a 10:00 PM todos los días.' },
-      { title: 'Tips', text: 'Reserva con anticipación en temporada alta.' }
-    ]
-  },
-  {
-    id: 3,
-    name: 'Restaurante Río Madre',
-    description: 'Pescados y mariscos amazónicos.',
-    location: 'Puerto Maldonado',
-    images: JSON.stringify(['https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/375487651.jpg?k=cece5be3462267b680d5ed842cd7782cb3bd5b2afb493488f921b8928999b2ad&o=']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Especialidad', text: 'Pescado a la parrilla y sopas amazónicas.' },
-      { title: 'Ubicación', text: 'Ubicado frente al río con terraza al aire libre.' }
-    ]
-  },
-  {
-    id: 4,
-    name: 'El Caimán',
-    description: 'Especialidad en carnes y pescados amazónicos.',
-    location: 'Puerto Maldonado',
-    images: JSON.stringify(['https://images.unsplash.com/photo-1504674900247-0877df9cc836']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Especialidad', text: 'Carnes de caza y pescados de río.' },
-      { title: 'Ambiente', text: 'Restaurante familiar con decoración amazónica.' },
-      { title: 'Recomendación', text: 'No te pierdas el chicharrón de pescado.' }
-    ]
-  },
-  {
-    id: 5,
-    name: 'La Patarashca',
-    description: 'Platos típicos de la selva y ambiente familiar.',
-    location: 'Puerto Maldonado',
-    images: JSON.stringify(['https://images.unsplash.com/photo-1519864600265-abb23847ef2c']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Especialidad', text: 'Patarashca de pescado y platos tradicionales.' },
-      { title: 'Historia', text: 'Restaurante familiar con más de 20 años de tradición.' },
-      { title: 'Tips', text: 'Ideal para grupos grandes y familias.' }
-    ]
-  },
-  {
-    id: 6,
-    name: 'El Tambo',
-    description: 'Comida regional y atención cálida.',
-    location: 'Puerto Maldonado',
-    images: JSON.stringify(['https://images.unsplash.com/photo-1519864600265-abb23847ef2c']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Especialidad', text: 'Comida casera y platos regionales.' },
-      { title: 'Ambiente', text: 'Restaurante acogedor con atención personalizada.' },
-      { title: 'Recomendación', text: 'Prueba el arroz chaufa amazónico.' }
-    ]
-  },
-];
+import { mockRestaurantes } from '../../../lib/mockData';
 
 interface Restaurante {
   id: number;
@@ -105,8 +25,8 @@ export default function RestauranteDetailPage() {
 
   useEffect(() => {
     if (params.id) {
-      // Buscar el restaurante en el array local
-      const restauranteEncontrado = restaurantes.find(r => r.id === parseInt(params.id as string));
+      // Buscar el restaurante en los datos mock
+      const restauranteEncontrado = mockRestaurantes.find(r => r.id === parseInt(params.id as string));
       if (restauranteEncontrado) {
         setRestaurante(restauranteEncontrado);
       }
@@ -198,24 +118,24 @@ export default function RestauranteDetailPage() {
             />
             
             {/* Overlay con información */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <div className="flex items-center space-x-4 mb-2">
-                  <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                  <span className="bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
                     Restaurante
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-2 text-white drop-shadow-lg">{restaurante.name}</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg">{restaurante.name}</h1>
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-1">
-                    <FaMapMarkerAlt className="w-5 h-5 text-yellow-300" />
-                    <span className="font-semibold text-white drop-shadow">{restaurante.location}</span>
+                    <FaMapMarkerAlt className="w-5 h-5 text-orange-400" />
+                    <span className="font-medium drop-shadow-lg">{restaurante.location}</span>
                   </div>
                   <div className="flex items-center space-x-1">
                     {[1, 2, 3, 4, 5].map((star) => (
-                      <FaStar key={star} className="w-5 h-5 text-yellow-300 fill-current" />
+                      <FaStar key={star} className="w-5 h-5 text-yellow-400 fill-current" />
                     ))}
-                    <span className="ml-2 font-semibold text-white drop-shadow">4.7</span>
+                    <span className="ml-2 font-medium drop-shadow-lg">4.7</span>
                   </div>
                 </div>
               </div>
@@ -246,7 +166,7 @@ export default function RestauranteDetailPage() {
                     key={index}
                     onClick={() => setSelectedImage(index)}
                     className={`relative w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 border-2 transition-all ${
-                      index === selectedImage ? 'border-green-500' : 'border-gray-200'
+                      index === selectedImage ? 'border-orange-500' : 'border-gray-200'
                     }`}
                   >
                     <Image
@@ -277,9 +197,9 @@ export default function RestauranteDetailPage() {
                 <div className="space-y-6">
                   <h3 className="text-xl font-bold text-gray-800 mb-4">Información Adicional</h3>
                   {restaurante.descriptions.map((desc, idx) => (
-                    <div key={idx} className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500 shadow-sm">
-                      <h4 className="text-lg font-bold text-orange-800 mb-2">{desc.title}</h4>
-                      <p className="text-gray-800 leading-relaxed font-medium">{desc.text}</p>
+                    <div key={idx} className="p-4 bg-gray-50 rounded-lg">
+                      <h4 className="text-lg font-bold text-orange-700 mb-2">{desc.title}</h4>
+                      <p className="text-gray-700 leading-relaxed">{desc.text}</p>
                     </div>
                   ))}
                 </div>
@@ -288,34 +208,34 @@ export default function RestauranteDetailPage() {
 
             {/* Información del restaurante */}
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-800 mb-6">Información del Restaurante</h2>
+              <h2 className="text-2xl font-bold text-gray-800 mb-6">Detalles del Restaurante</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="flex items-center space-x-3 p-4 bg-orange-50 rounded-lg shadow-sm">
-                  <FaMapMarkerAlt className="w-5 h-5 text-orange-600" />
+                <div className="flex items-center space-x-3 p-4 bg-orange-50 rounded-lg">
+                  <FaMapMarkerAlt className="w-5 h-5 text-orange-500" />
                   <div>
-                    <p className="text-gray-700 text-sm font-medium">Ubicación</p>
-                    <p className="font-bold text-gray-900">{restaurante.location}</p>
+                    <p className="text-gray-600 text-sm">Ubicación</p>
+                    <p className="font-semibold">{restaurante.location}</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg shadow-sm">
-                  <FaClock className="w-5 h-5 text-green-600" />
+                <div className="flex items-center space-x-3 p-4 bg-green-50 rounded-lg">
+                  <FaClock className="w-5 h-5 text-green-500" />
                   <div>
-                    <p className="text-gray-700 text-sm font-medium">Horarios</p>
-                    <p className="font-bold text-gray-900">7:00 AM - 10:00 PM</p>
+                    <p className="text-gray-600 text-sm">Horarios</p>
+                    <p className="font-semibold">7:00 AM - 10:00 PM</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3 p-4 bg-blue-50 rounded-lg shadow-sm">
-                  <FaPhone className="w-5 h-5 text-blue-600" />
+                <div className="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg">
+                  <FaUsers className="w-5 h-5 text-purple-500" />
                   <div>
-                    <p className="text-gray-700 text-sm font-medium">Teléfono</p>
-                    <p className="font-bold text-gray-900">+51 982 123 456</p>
+                    <p className="text-gray-600 text-sm">Capacidad</p>
+                    <p className="font-semibold">50 personas</p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-3 p-4 bg-purple-50 rounded-lg shadow-sm">
-                  <FaUsers className="w-5 h-5 text-purple-600" />
+                <div className="flex items-center space-x-3 p-4 bg-yellow-50 rounded-lg">
+                  <FaUtensils className="w-5 h-5 text-yellow-500" />
                   <div>
-                    <p className="text-gray-700 text-sm font-medium">Capacidad</p>
-                    <p className="font-bold text-gray-900">50 personas</p>
+                    <p className="text-gray-600 text-sm">Tipo de Cocina</p>
+                    <p className="font-semibold">Amazónica</p>
                   </div>
                 </div>
               </div>
@@ -329,31 +249,31 @@ export default function RestauranteDetailPage() {
               <h3 className="text-xl font-bold text-gray-800 mb-4">Información Rápida</h3>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <FaClock className="w-5 h-5 text-orange-600" />
+                  <FaClock className="w-5 h-5 text-orange-500" />
                   <div>
-                    <p className="text-gray-700 text-sm font-medium">Horarios</p>
-                    <p className="font-bold text-gray-900">7:00 AM - 10:00 PM</p>
+                    <p className="text-gray-600 text-sm">Horarios</p>
+                    <p className="font-semibold">7:00 AM - 10:00 PM</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FaUsers className="w-5 h-5 text-green-600" />
+                  <FaUsers className="w-5 h-5 text-green-500" />
                   <div>
-                    <p className="text-gray-700 text-sm font-medium">Capacidad</p>
-                    <p className="font-bold text-gray-900">50 personas</p>
+                    <p className="text-gray-600 text-sm">Capacidad</p>
+                    <p className="font-semibold">50 personas</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FaUtensils className="w-5 h-5 text-purple-600" />
+                  <FaUtensils className="w-5 h-5 text-purple-500" />
                   <div>
-                    <p className="text-gray-700 text-sm font-medium">Tipo de Cocina</p>
-                    <p className="font-bold text-gray-900">Amazónica</p>
+                    <p className="text-gray-600 text-sm">Cocina</p>
+                    <p className="font-semibold">Amazónica</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <FaStar className="w-5 h-5 text-yellow-600" />
+                  <FaStar className="w-5 h-5 text-yellow-500" />
                   <div>
-                    <p className="text-gray-700 text-sm font-medium">Calificación</p>
-                    <p className="font-bold text-yellow-700">4.7/5</p>
+                    <p className="text-gray-600 text-sm">Calificación</p>
+                    <p className="font-semibold text-yellow-600">4.7/5</p>
                   </div>
                 </div>
               </div>
@@ -362,27 +282,27 @@ export default function RestauranteDetailPage() {
             {/* Botón de reserva */}
             <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-6 text-white text-center">
               <h3 className="text-xl font-bold mb-2">¿Te interesa este restaurante?</h3>
-              <p className="text-orange-100 mb-4">Reserva tu mesa y disfruta de la gastronomía local</p>
+              <p className="text-orange-100 mb-4">Reserva tu mesa para una experiencia gastronómica única</p>
               <button className="w-full bg-white text-orange-600 font-bold py-3 px-6 rounded-xl hover:bg-orange-50 transition-colors">
                 Reservar Mesa
               </button>
             </div>
 
             {/* Información de contacto */}
-            <div className="bg-blue-50 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-blue-900 mb-2">Información de Contacto</h3>
-              <div className="space-y-3 text-blue-800 text-sm font-medium">
-                <div className="flex items-center space-x-2">
-                  <FaPhone className="w-4 h-4" />
-                  <span>+51 982 123 456</span>
+            <div className="bg-orange-50 rounded-2xl p-6">
+              <h3 className="text-lg font-bold text-orange-800 mb-4">Información de Contacto</h3>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <FaPhone className="w-4 h-4 text-orange-600" />
+                  <span className="text-orange-700">+51 999 123 456</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <FaEnvelope className="w-4 h-4" />
-                  <span>info@restaurante.com</span>
+                <div className="flex items-center space-x-3">
+                  <FaEnvelope className="w-4 h-4 text-orange-600" />
+                  <span className="text-orange-700">info@restaurante.com</span>
                 </div>
-                <div className="flex items-center space-x-2">
-                  <FaMapMarkerAlt className="w-4 h-4" />
-                  <span>{restaurante.location}</span>
+                <div className="flex items-center space-x-3">
+                  <FaMapMarkerAlt className="w-4 h-4 text-orange-600" />
+                  <span className="text-orange-700">{restaurante.location}</span>
                 </div>
               </div>
             </div>

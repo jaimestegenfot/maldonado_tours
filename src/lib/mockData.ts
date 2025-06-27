@@ -199,19 +199,17 @@ export const mockStats = {
     { date: '2024-02-14', views: 38, favorites: 2 },
     { date: '2024-02-13', views: 52, favorites: 5 },
     { date: '2024-02-12', views: 41, favorites: 1 },
-    { date: '2024-02-11', views: 47, favorites: 4 },
-    { date: '2024-02-10', views: 39, favorites: 2 },
-    { date: '2024-02-09', views: 44, favorites: 3 }
+    { date: '2024-02-11', views: 67, favorites: 4 }
   ]
 };
 
 export const mockUser = {
   id: 1,
   name: 'Carlos Maldonado',
-  email: 'carlos@maldonadotours.com',
+  email: 'carlos@example.com',
   phone: '+51 999 123 456',
-  company: 'Maldonado Tours',
-  website: 'https://maldonadotours.com',
+  company: 'PEM Tours',
+  website: 'https://pemtours.com',
   location: 'Puerto Maldonado, Madre de Dios',
   bio: 'Operador turístico especializado en ecoturismo y aventura en la Amazonía peruana.',
   avatar: '/api/placeholder/150/150',
@@ -219,4 +217,247 @@ export const mockUser = {
   totalDestinations: 5,
   totalViews: 3456,
   totalFavorites: 234
+};
+
+// Datos de Viajes y Naturaleza
+export const mockViajes = [
+  {
+    id: 1,
+    name: 'Reserva Nacional Tambopata',
+    description: 'Selva virgen, biodiversidad y paisajes únicos.',
+    location: 'Tambopata',
+    images: JSON.stringify(['https://www.lorenzoexpeditions.com/wp-content/uploads/2022/12/RESERVA-TAMBOPATA-1-2-scaled.jpg']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Historia', text: 'La Reserva Nacional Tambopata es uno de los lugares más biodiversos del planeta.' },
+      { title: 'Tips', text: 'Lleva binoculares y protector solar.' },
+      { title: 'Recomendación', text: 'No te pierdas el avistamiento de aves al amanecer.' }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Lago Sandoval',
+    description: 'Hermoso lago rodeado de selva y fauna.',
+    location: 'Tambopata',
+    images: JSON.stringify(['https://www.peru.travel/Contenido/Uploads/lago-sandoval-interior-3_637661807837691460.jpg']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Historia', text: 'El Lago Sandoval es famoso por su belleza y su fauna única.' },
+      { title: 'Tips', text: 'Ideal para paseos en canoa y fotografía.' }
+    ]
+  },
+  {
+    id: 3,
+    name: 'Collpa de Guacamayos',
+    description: 'Espectáculo de aves en la Amazonía.',
+    location: 'Tambopata',
+    images: JSON.stringify(['https://rainforestexpeditions.com/es/wp-content/uploads/2021/10/Collpa-de-Guacamayos-Chuncho-en-la-Reserva-Nacional-Tambopata.jpg']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Recomendación', text: 'Llega temprano para ver la mayor cantidad de aves.' }
+    ]
+  },
+  {
+    id: 4,
+    name: 'Isla de los Monos',
+    description: 'Santuario de fauna amazónica en el río Madre de Dios.',
+    location: 'Río Madre de Dios',
+    images: JSON.stringify(['https://www.heliconialodge.com.pe/objetos/servicio/MTQ=/img_10122018102302.jpg']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Tips', text: 'Lleva frutas para interactuar con los monos.' }
+    ]
+  },
+  {
+    id: 5,
+    name: 'Centro de Rescate Taricaya',
+    description: 'Rescate y conservación de fauna silvestre.',
+    location: 'Río Madre de Dios',
+    images: JSON.stringify(['https://gotambopata.com/wp-content/uploads/slider/cache/8e8ce3c9e013b7034bc4ce3abae16be1/Atardecer-en-la-Reserva-Ecologica-Taricaya.jpg']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Historia', text: 'Centro dedicado a la rehabilitación de animales silvestres.' }
+    ]
+  },
+  {
+    id: 7,
+    name: 'Parque Nacional Bahuaja Sonene',
+    description: 'Área protegida con paisajes únicos y biodiversidad.',
+    location: 'Bahuaja Sonene',
+    images: JSON.stringify(['https://lugarturistico.pe/wp-content/uploads/2023/05/parque_nacional_bahuaja.jpg']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Tips', text: 'Ideal para los amantes de la naturaleza y la aventura.' }
+    ]
+  },
+];
+
+// Datos de Restaurantes
+export const mockRestaurantes = [
+  {
+    id: 1,
+    name: 'Restaurante Amazónico El Jaguar',
+    description: 'Gastronomía local con insumos amazónicos.',
+    location: 'Puerto Maldonado',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1504674900247-0877df9cc836']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Platos con pescado de río y frutos amazónicos.' },
+      { title: 'Ambiente', text: 'Restaurante rústico con vista al río Madre de Dios.' },
+      { title: 'Recomendación', text: 'Prueba el juane de gallina y el tacacho con cecina.' }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Restaurante La Selva',
+    description: 'Comida típica y ambiente amazónico.',
+    location: 'Puerto Maldonado',
+    images: JSON.stringify(['https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/a5/ec/bd/restaurante-la-selva.jpg?w=900&h=500&s=1']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Ceviche amazónico y platos con yuca.' },
+      { title: 'Horarios', text: 'Abierto de 7:00 AM a 10:00 PM todos los días.' },
+      { title: 'Tips', text: 'Reserva con anticipación en temporada alta.' }
+    ]
+  },
+  {
+    id: 3,
+    name: 'Restaurante Río Madre',
+    description: 'Pescados y mariscos amazónicos.',
+    location: 'Puerto Maldonado',
+    images: JSON.stringify(['https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/375487651.jpg?k=cece5be3462267b680d5ed842cd7782cb3bd5b2afb493488f921b8928999b2ad&o=']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Pescado a la parrilla y sopas amazónicas.' },
+      { title: 'Ubicación', text: 'Ubicado frente al río con terraza al aire libre.' }
+    ]
+  },
+  {
+    id: 4,
+    name: 'El Caimán',
+    description: 'Especialidad en carnes y pescados amazónicos.',
+    location: 'Puerto Maldonado',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1504674900247-0877df9cc836']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Carnes de caza y pescados de río.' },
+      { title: 'Ambiente', text: 'Restaurante familiar con decoración amazónica.' },
+      { title: 'Recomendación', text: 'No te pierdas el chicharrón de pescado.' }
+    ]
+  },
+  {
+    id: 5,
+    name: 'La Patarashca',
+    description: 'Platos típicos de la selva y ambiente familiar.',
+    location: 'Puerto Maldonado',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1519864600265-abb23847ef2c']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Patarashca de pescado y platos tradicionales.' },
+      { title: 'Historia', text: 'Restaurante familiar con más de 20 años de tradición.' },
+      { title: 'Tips', text: 'Ideal para grupos grandes y familias.' }
+    ]
+  },
+  {
+    id: 6,
+    name: 'El Tambo',
+    description: 'Comida regional y atención cálida.',
+    location: 'Puerto Maldonado',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1519864600265-abb23847ef2c']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Especialidad', text: 'Comida casera y platos regionales.' },
+      { title: 'Ambiente', text: 'Restaurante acogedor con atención personalizada.' },
+      { title: 'Recomendación', text: 'Prueba el arroz chaufa amazónico.' }
+    ]
+  },
+];
+
+// Datos de Hospedajes
+export const mockHospedajes = [
+  {
+    id: 1,
+    name: 'EcoAmazonia Lodge',
+    description: 'Hospedaje ecológico en plena selva.',
+    location: 'Río Madre de Dios',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1465101046530-73398c7f28ca']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Tipo de Alojamiento', text: 'Lodge ecológico con cabañas en la selva.' },
+      { title: 'Servicios', text: 'Tours incluidos, restaurante y guías nativos.' },
+      { title: 'Recomendación', text: 'Ideal para amantes de la naturaleza y aventura.' }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Hostal Tambopata',
+    description: 'Hospedaje cómodo y económico.',
+    location: 'Tambopata',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1506744038136-46273834b3fb']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Tipo de Alojamiento', text: 'Hostal familiar con habitaciones privadas.' },
+      { title: 'Servicios', text: 'WiFi gratuito, desayuno incluido y recepción 24h.' },
+      { title: 'Ubicación', text: 'Céntrico, cerca de restaurantes y tiendas.' }
+    ]
+  },
+  {
+    id: 3,
+    name: 'Inkaterra Reserva Amazónica',
+    description: 'Lodge de lujo en la selva con experiencias únicas.',
+    location: 'Reserva Nacional Tambopata',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1465101046530-73398c7f28ca']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Tipo de Alojamiento', text: 'Lodge de lujo con suites premium.' },
+      { title: 'Servicios', text: 'Spa, piscina, restaurante gourmet y tours exclusivos.' },
+      { title: 'Experiencia', text: 'Una de las mejores experiencias en la Amazonía.' }
+    ]
+  },
+  {
+    id: 4,
+    name: 'Wasai Lodge',
+    description: 'Hospedaje con tours y actividades en la selva.',
+    location: 'Puerto Maldonado',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1465101046530-73398c7f28ca']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Tipo de Alojamiento', text: 'Lodge con cabañas y habitaciones estándar.' },
+      { title: 'Actividades', text: 'Tours a la selva, pesca y observación de aves.' },
+      { title: 'Tips', text: 'Reserva con anticipación en temporada alta.' }
+    ]
+  },
+  {
+    id: 5,
+    name: 'Lodge Amazon Garden',
+    description: 'Hospedaje con tours incluidos.',
+    location: 'Tambopata',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1465101046530-73398c7f28ca']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Tipo de Alojamiento', text: 'Lodge con jardines y vista al río.' },
+      { title: 'Tours Incluidos', text: 'Visita a collpas, caminatas nocturnas y canotaje.' },
+      { title: 'Ambiente', text: 'Relajante y perfecto para desconectar.' }
+    ]
+  },
+  {
+    id: 6,
+    name: 'Hostal Río Madre',
+    description: 'Hospedaje familiar y acogedor.',
+    location: 'Puerto Maldonado',
+    images: JSON.stringify(['https://images.unsplash.com/photo-1465101046530-73398c7f28ca']),
+    created_at: '2024-01-01T00:00:00Z',
+    descriptions: [
+      { title: 'Tipo de Alojamiento', text: 'Hostal familiar con atención personalizada.' },
+      { title: 'Servicios', text: 'Desayuno casero, WiFi y información turística.' },
+      { title: 'Recomendación', text: 'Ideal para viajeros con presupuesto limitado.' }
+    ]
+  },
+];
+
+// Imágenes de hero para cada sección
+export const heroImages = {
+  viajes: "https://lugarturistico.pe/wp-content/uploads/2023/05/parque_nacional_bahuaja.jpg",
+  restaurantes: "https://cosasbucket.s3.amazonaws.com/wp-content/uploads/2024/07/25173200/destination-peru-madre-de-dios-puerto-maldonado-750x450.png",
+  hospedajes: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2d/ad/ad/12/caption.jpg?w=1400&h=800&s=1"
 }; 

@@ -8,8 +8,8 @@ import { AuthProvider } from "@/components/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Maldonado Tours - Plataforma Turística",
-  description: "Descubre las mejores zonas turísticas de Maldonado",
+  title: "PEM Tours - Plataforma Turística",
+  description: "Descubre las mejores zonas turísticas de Madre de Dios",
 };
 
 export default function RootLayout({

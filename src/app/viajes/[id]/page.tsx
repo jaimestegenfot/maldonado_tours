@@ -5,79 +5,7 @@ import { useParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaMapMarkerAlt, FaStar, FaArrowLeft, FaShare, FaHeart, FaCalendar, FaClock, FaUsers, FaMoneyBillWave } from 'react-icons/fa';
-
-// Array local de destinos (copiado de la página principal)
-const destinosNaturaleza = [
-  {
-    id: 1,
-    name: 'Reserva Nacional Tambopata',
-    description: 'Selva virgen, biodiversidad y paisajes únicos.',
-    location: 'Tambopata',
-    images: JSON.stringify(['https://www.lorenzoexpeditions.com/wp-content/uploads/2022/12/RESERVA-TAMBOPATA-1-2-scaled.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Historia', text: 'La Reserva Nacional Tambopata es uno de los lugares más biodiversos del planeta.' },
-      { title: 'Tips', text: 'Lleva binoculares y protector solar.' },
-      { title: 'Recomendación', text: 'No te pierdas el avistamiento de aves al amanecer.' }
-    ]
-  },
-  {
-    id: 2,
-    name: 'Lago Sandoval',
-    description: 'Hermoso lago rodeado de selva y fauna.',
-    location: 'Tambopata',
-    images: JSON.stringify(['https://www.peru.travel/Contenido/Uploads/lago-sandoval-interior-3_637661807837691460.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Historia', text: 'El Lago Sandoval es famoso por su belleza y su fauna única.' },
-      { title: 'Tips', text: 'Ideal para paseos en canoa y fotografía.' }
-    ]
-  },
-  {
-    id: 3,
-    name: 'Collpa de Guacamayos',
-    description: 'Espectáculo de aves en la Amazonía.',
-    location: 'Tambopata',
-    images: JSON.stringify(['https://rainforestexpeditions.com/es/wp-content/uploads/2021/10/Collpa-de-Guacamayos-Chuncho-en-la-Reserva-Nacional-Tambopata.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Recomendación', text: 'Llega temprano para ver la mayor cantidad de aves.' }
-    ]
-  },
-  {
-    id: 4,
-    name: 'Isla de los Monos',
-    description: 'Santuario de fauna amazónica en el río Madre de Dios.',
-    location: 'Río Madre de Dios',
-    images: JSON.stringify(['https://www.heliconialodge.com.pe/objetos/servicio/MTQ=/img_10122018102302.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Tips', text: 'Lleva frutas para interactuar con los monos.' }
-    ]
-  },
-  {
-    id: 5,
-    name: 'Centro de Rescate Taricaya',
-    description: 'Rescate y conservación de fauna silvestre.',
-    location: 'Río Madre de Dios',
-    images: JSON.stringify(['https://gotambopata.com/wp-content/uploads/slider/cache/8e8ce3c9e013b7034bc4ce3abae16be1/Atardecer-en-la-Reserva-Ecologica-Taricaya.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Historia', text: 'Centro dedicado a la rehabilitación de animales silvestres.' }
-    ]
-  },
-  {
-    id: 7,
-    name: 'Parque Nacional Bahuaja Sonene',
-    description: 'Área protegida con paisajes únicos y biodiversidad.',
-    location: 'Bahuaja Sonene',
-    images: JSON.stringify(['https://lugarturistico.pe/wp-content/uploads/2023/05/parque_nacional_bahuaja.jpg']),
-    created_at: '2024-01-01T00:00:00Z',
-    descriptions: [
-      { title: 'Tips', text: 'Ideal para los amantes de la naturaleza y la aventura.' }
-    ]
-  },
-];
+import { mockViajes } from '../../../lib/mockData';
 
 interface Viaje {
   id: number;
@@ -97,8 +25,8 @@ export default function ViajeDetailPage() {
 
   useEffect(() => {
     if (params.id) {
-      // Buscar el viaje en el array local
-      const viajeEncontrado = destinosNaturaleza.find(v => v.id === parseInt(params.id as string));
+      // Buscar el viaje en los datos mock
+      const viajeEncontrado = mockViajes.find(v => v.id === parseInt(params.id as string));
       if (viajeEncontrado) {
         setViaje(viajeEncontrado);
       }
@@ -197,17 +125,17 @@ export default function ViajeDetailPage() {
                     Viaje y Naturaleza
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-2">{viaje.name}</h1>
+                <h1 className="text-4xl md:text-5xl font-bold mb-2 drop-shadow-lg">{viaje.name}</h1>
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-1">
                     <FaMapMarkerAlt className="w-5 h-5 text-green-400" />
-                    <span className="font-medium">{viaje.location}</span>
+                    <span className="font-medium drop-shadow-lg">{viaje.location}</span>
                   </div>
                   <div className="flex items-center space-x-1">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <FaStar key={star} className="w-5 h-5 text-yellow-400 fill-current" />
                     ))}
-                    <span className="ml-2 font-medium">4.9</span>
+                    <span className="ml-2 font-medium drop-shadow-lg">4.9</span>
                   </div>
                 </div>
               </div>
