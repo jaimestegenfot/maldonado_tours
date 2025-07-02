@@ -28,7 +28,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-400 rounded-lg flex items-center justify-center shadow">
-              <span className="text-white font-bold text-lg">MT</span>
+              <span className="text-white font-bold text-lg">PT</span>
             </div>
             <span className="text-xl font-extrabold text-green-800 tracking-tight">PEM Tours</span>
           </Link>
