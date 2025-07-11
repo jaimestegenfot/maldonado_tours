@@ -1,5 +1,5 @@
 'use client';
-
+import Image from "next/image";
 import { useAuth } from './AuthProvider';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -26,9 +26,15 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-400 rounded-lg flex items-center justify-center shadow">
-              <span className="text-white font-bold text-lg">PT</span>
+          <Link href="/" className="flex items-center space-x-1">
+            <div className="w-15 h-15 rounded-lg flex items-center justify-center">
+              <Image
+                src="/logo/logo.png"      // debe estar en /public
+                alt="Logo pem tours"
+                width={50}               // puedes ajustar a lo que desees
+                height={50}
+                className="object-contain"
+              />
             </div>
             <span className="text-xl font-extrabold text-green-800 tracking-tight">PEM Tours</span>
           </Link>
